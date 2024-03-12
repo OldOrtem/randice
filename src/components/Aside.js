@@ -8,7 +8,9 @@ class Aside extends React.Component {
         super(props);
         this.state = {
           diceNumber: 6,
-          diceType: 6
+          diceType: 6,
+          sliderVal: 10,
+          isChecked: false 
         };
       }
     
@@ -23,6 +25,7 @@ class Aside extends React.Component {
         body: JSON.stringify({
             diceNumber: this.state.diceNumber,
             diceType: this.state.diceType,
+            sort: this.state.isChecked,
         }),
         });
 
@@ -44,22 +47,32 @@ class Aside extends React.Component {
     });
     };
 
+    handleSliderChange = (event) => {
+        this.setState({ sliderVal: event.target.value });
+    }
+
+    handleCheckChange = () => {
+    this.setState({ isChecked: !this.state.isChecked });
+    }
 
     render() {
         return (
             <aside>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label htmlFor="dice_number">Введите количество: </label>
+                        <label htmlFor="dice_number">Количество кубов: {this.state.diceNumber}</label>
                         <input
-                            type="number"
                             id="dice_number"
                             name="diceNumber"
+                            type="range"
+                            min="1"
+                            max="100"
                             value={this.state.diceNumber}
-                            onChange={this.handleInputChange}
+                            onChange={(event)=>{this.handleSliderChange(event);this.handleInputChange(event) }}
                         />
+                        
                     </div>
-                    <div>
+                    <div hidden>
                         <label htmlFor="dice_type">Введите тип кубов: </label>
                         <input
                             type="number"
@@ -67,10 +80,26 @@ class Aside extends React.Component {
                             name="diceType"
                             value={this.state.diceType}
                             onChange={this.handleInputChange}
+                            placeholder="6 и только 6"
                         />
                     </div>
                     <div>
-                        <input type="submit" value="Бросить" />
+                        <div>
+                        <input 
+                            id="c"
+                            name="c"
+                            type="checkbox"
+                            checked={this.state.isChecked}
+                            onChange={this.handleCheckChange}
+                            
+                        />
+                        <label htmlFor="c">
+                        Сортировать
+                        </label>
+                        </div>
+                    </div>
+                    <div>
+                        <input id="submit" type="submit" value="Бросить" />
                     </div>
                 </form>
             </aside>
