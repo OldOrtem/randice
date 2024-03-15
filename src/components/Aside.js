@@ -10,6 +10,7 @@ function generateRandomArray(diceNumber, diceType, shouldSort) {
     }
     return randomArray;
 }
+
 class Aside extends React.Component {
     constructor(props) {
         super(props);
