@@ -17,7 +17,7 @@ class Aside extends React.Component {
     handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch("http://localhost:8000/api/roll-dice", {
+        const response = await fetch("http://192.168.0.101:8000/api/roll-dice", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

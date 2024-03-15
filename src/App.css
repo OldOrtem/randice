@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+
+body{
+  background-color: rgb(81, 80, 80);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  margin: 1vh;
+  font-size: 6vh;
+  color:aliceblue;
+  display: inline-block;
+  
+  
+}
+header {
+  height: 10vh;
+  min-height: 50px;
+  background-color: rgb(61, 60, 60);
+  
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#flex{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  height: 85vh;
 }
 
-.App-link {
-  color: #61dafb;
+aside{
+  background-color: rgb(61, 60, 60);
+  margin-top: 10px;
+  padding: 20px;
+  margin-right:  5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  height: 100%;
+  max-width: 200px;
+  min-width: 100px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+main{
+  margin-left: 5px;
+  background-color: rgb(61, 60, 60);
+  margin-top: 10px;
+  padding: 10px;
+  flex: 1;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  height: 100%;
+}
+
+label{
+  color:aliceblue;
+  margin: 5px;
+}
+
+input{
+  background-color: rgb(81, 80, 80);
+  border-radius: 5px;
+  color:aliceblue;
+  width: 100%;
+  margin: 5px;
+  box-sizing: border-box;
+  
+}
+#dice_number:hover{
+  cursor: pointer;
+}
+#submit{
+  border: none;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+#submit:hover {
+  background: aliceblue;
+  color: black;
+  cursor: pointer;
+}
+#submit:active {
+  color:aliceblue;
+  box-shadow: 0px 0px 10px 0px #cbd6ee;
+}
+
+form{
+  max-width: 200px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 800px) {
+  #flex{
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  aside{
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    justify-content: center;
+    margin-right: 0;
+    
   }
+
+  main{
+    border-radius: 0;
+    margin-left: 0;
+  }
+}
+
+#diceBoard{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+
+img{
+  margin: 5px;
+  max-width: 50px;
+  border: solid black 1px;
+  border-radius: 5px;
+  box-shadow: 10px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#sliderVal{
+  font-size: medium;
+}
+
+#c{
+  width: 15px;
 }
