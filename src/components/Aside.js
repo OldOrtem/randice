@@ -36,6 +36,9 @@ class Aside extends React.Component {
 
     handleCheckChange = () => {
         this.setState({ isChecked: !this.state.isChecked });
+        if (!this.state.isChecked){
+            this.props.sortDice();
+        }
     }
 
     render() {

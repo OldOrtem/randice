@@ -13,6 +13,7 @@ class App extends React.Component{
       loading: false
     }
     this.rollDice = this.rollDice.bind(this)
+    this.sortDice = this.sortDice.bind(this)
   }
 
   render(){
@@ -20,7 +21,7 @@ class App extends React.Component{
       <div >
         <Header/>
         <div id="flex">
-        <Aside dices={this.state.dices} rollDice={this.rollDice}/>
+        <Aside dices={this.state.dices} sortDice = {this.sortDice} rollDice={this.rollDice}/>
         <Main dices={this.state.dices} loading={this.state.loading}/>
         </div>
         
@@ -31,6 +32,11 @@ class App extends React.Component{
   rollDice(dice) {
     this.setState({dices:  dice})
     console.log(dice)
+  }
+
+  sortDice(){
+    const sortedDices = [...this.state.dices].sort((a, b) => b - a);
+    this.setState({ dices: sortedDices });
   }
 
 }
