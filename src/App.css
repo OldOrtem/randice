@@ -2,7 +2,6 @@
 body{
   background-color: rgb(81, 80, 80);
 }
-
 p {
   margin: 1vh;
   font-size: 6vh;
@@ -20,13 +19,11 @@ header {
   border-radius: 5px;
   
 }
-
 #flex{
   display: flex;
   flex-direction: row;
   height: 85vh;
 }
-
 aside{
   background-color: rgb(61, 60, 60);
   margin-top: 10px;
@@ -39,7 +36,6 @@ aside{
   min-width: 100px;
   
 }
-
 main{
   margin-left: 5px;
   background-color: rgb(61, 60, 60);
@@ -50,12 +46,10 @@ main{
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
   height: 100%;
 }
-
 label{
   color:aliceblue;
   margin: 5px;
 }
-
 input{
   background-color: rgb(81, 80, 80);
   border-radius: 5px;
@@ -81,12 +75,10 @@ input{
   color:aliceblue;
   box-shadow: 0px 0px 10px 0px #cbd6ee;
 }
-
 form{
   max-width: 200px;
   display: inline-block;
 }
-
 @media screen and (max-width: 800px) {
   #flex{
     flex-direction: column;
@@ -106,15 +98,11 @@ form{
     margin-left: 0;
   }
 }
-
 #diceBoard{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-
-
 img{
   margin: 5px;
   max-width: 50px;
@@ -125,8 +113,23 @@ img{
 
 #sliderVal{
   font-size: medium;
+  margin-right: 0;
+  width: 200px;
 }
 
-#c{
+#checkbox{
   width: 15px;
+}
+
+#num_slider_input{
+  width: 48px;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    
+    -webkit-appearance: none;
+    margin: 0; 
 }

@@ -12,17 +12,15 @@ class Main extends React.Component {
   }
   
   render() {
-    const { results, loading, error } = this.state;
-
-    
-
     return (
       <main>
         <div id="diceBoard">
           
-            {this.props.dices.map((el) => (
-              <Dice key={el.id} n={el} />
-            ))}
+        {this.props.dices.map((el, index) => (
+    <Dice key={index} n={el} />
+))}
+
+
           
         </div>
       </main>
