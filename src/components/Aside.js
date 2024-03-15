@@ -1,6 +1,15 @@
 import React from "react"
 
-
+function generateRandomArray(diceNumber, diceType, shouldSort) {
+    let randomArray = [];
+    for (let i = 0; i < diceNumber; i++) {
+        randomArray.push(Math.floor(Math.random() * diceType) + 1);
+    }
+    if (shouldSort) {
+        randomArray.sort((a, b) => b - a); // Сортируем массив по убыванию
+    }
+    return randomArray;
+}
 
 class Aside extends React.Component {
 
@@ -14,28 +23,14 @@ class Aside extends React.Component {
         };
       }
     
+    
     handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch("http://192.168.0.101:8000/api/roll-dice", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            diceNumber: this.state.diceNumber,
-            diceType: this.state.diceType,
-            sort: this.state.isChecked,
-        }),
-        });
-
-        if (!response.ok) {
-        throw new Error("Failed to roll dice");
-        }
-        const data = await response.json();
+        
+        const data = generateRandomArray(this.state.diceNumber, this.state.diceType, this.state.isChecked);
         console.log(data)
         this.props.rollDice(data.result);
-        // Обработка успешного ответа, если это необходимо
     } catch (error) {
         console.error("Error rolling dice:", error);
     }

@@ -12,10 +12,6 @@ class Main extends React.Component {
   }
   
   render() {
-    const { results, loading, error } = this.state;
-
-    
-
     return (
       <main>
         <div id="diceBoard">
